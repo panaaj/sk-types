@@ -1,0 +1,15 @@
+{
+    "name": "@panaaj/sk-types",
+    "version": "1.0.0",
+    "description": "Signal K plugin types.",
+    "keywords": [
+        "signal k", "typescript"
+    ],
+    "author": "AdrianP",
+    "contributors": [
+        {
+            "name": "panaaj@hotmail.com"
+        }
+    ],
+    "license": "Apache-20"
+}
