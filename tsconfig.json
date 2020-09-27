@@ -22,5 +22,6 @@
         "./server/delta.ts",
         "./server/notification.ts",
         "./server/plugin.ts",
+        "./server/request.ts",
     ]
 }
