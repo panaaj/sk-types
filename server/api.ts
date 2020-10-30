@@ -1,3 +1,11 @@
+import { DeltaUpdate, DeltaNotification } from './delta';
+
+export enum ServerRoles {
+    master= "master",
+    main= "main",
+    aux= "aux",
+    slave= "slave"
+}
 
   
 export interface ServerAPI extends 
@@ -16,7 +24,10 @@ export interface ServerAPI extends
     queryRequest: (requestId: string) => Promise<any>
     error: (msg: string) => void
     debug: (msg: string) => void
-    handleMessage: (id: string | null, msg: any) => void
+    handleMessage: (
+        id: string | null, 
+        msg: DeltaUpdate | DeltaNotification
+    ) => void
     savePluginOptions: (
         configuration: object,
         cb: (err: any | null) => void
@@ -61,6 +72,8 @@ interface DeltaManager {
 }
 
 interface ProviderStatusLogger {
+    setPluginStatus: (pluginId: string, status?: string) => void
+    setPluginError: (pluginId: string, status?: string) => void
     setProviderStatus: (providerId: string, status?: string) => void
     setProviderError: (providerId: string, status?: string) => void
 }

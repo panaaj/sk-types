@@ -1,22 +1,19 @@
-import { ALARM_STATE, ALARM_METHOD } from './notification';
-
-export enum ServerRoles {
-    master= "master",
-    main= "main",
-    aux= "aux",
-    slave= "slave"
+// ** Notifications **
+export enum ALARM_STATE {
+    nominal = 'nominal',
+    normal = 'normal',
+    alert = 'alert',
+    warn = 'warn',
+    alarm = 'alarm',
+    emergency = 'emergency'
 }
 
-export interface DeltaHello {
-    version: string;
-    roles: Array<ServerRoles>;
-    name?: string;
-    timestamp?: string;
-    self?: string;
-    startTime?: string;
-    playbackRate?: number;
+export enum ALARM_METHOD {
+    visual = 'visual', 
+    sound = 'sound'
 }
 
+// ** Server Messages **
 export interface DeltaMessage {
     path: string; 
     value: any;
@@ -35,4 +32,3 @@ export interface DeltaNotification extends DeltaMessage {
         message: string
     }
 }
-
