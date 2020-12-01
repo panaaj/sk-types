@@ -1,5 +1,9 @@
 # CHANGELOG: @panaaj/sk-types
 
+### v1.1.1
+
+- __fix:__ typescript config
+
 ### v1.1.0
 
 Add Request / Response types.
